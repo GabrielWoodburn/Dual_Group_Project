@@ -26,10 +26,7 @@ public class Animal {
 	private int animal_Age;
 	@Column(name="ANIMAL_WEIGHT")
 	private double animal_Weight;
-	@ManyToOne(cascade = CascadeType.PERSIST)
-	@JoinColumn(name="EMPLOYEE_ID")
-	private Employee employee;
-	
+
 	//Constructors
 	public Animal()
 	{
@@ -43,8 +40,7 @@ public class Animal {
 		this.animal_Age = animal_Age;
 		this.animal_Weight = animal_Weight;
 	}
-	
-	
+
 	//Methods
 	public int getAnimal_Id() {
 		return animal_Id;
