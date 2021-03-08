@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 import controller.AnimalHelper;
@@ -12,14 +13,27 @@ public class Tester {
 	{
 		//This should insert the instance of Animal, Zoo, and Employee and then get a list of what's stored
 		//in their respective database
-		Zoo newZoo = new Zoo("Henry Doorly");
-		Employee newEmployee = new Employee("Logan", "Riedell", "Pooper Scooper");
-		Animal newAnimal = new Animal("Mickey Mouse", 93, 5.4);
-		//Insert and retrieve lists
-		List<Animal> animals = testAnimals(newAnimal);
-		List<Zoo> zoos = testZoos(newZoo);
-		List<Employee> employees = testEmployees(newEmployee);
+		/*Zoo newZoo = new Zoo("Henry Doorly");
+		List<Employee> doorlyEmployees = new ArrayList<Employee>();
+		Employee anotherNewEmp = new Employee("Shawn", "Baker", "Caretaker");
+		List<Animal> newEmployeesAnimals = new ArrayList<Animal>();
+		newEmployeesAnimals.add(newAnimal);
+		Employee newEmployee = new Employee("Logan", "Riedell", "Pooper Scooper", newEmployeesAnimals);
+		doorlyEmployees.add(newEmployee);
+		newZoo.setEmployeeList(doorlyEmployees);*/
+		EmployeeHelper help = new EmployeeHelper();
+		Employee emp = help.searchId(14);
+		emp.getAnimalList().add(new Animal("Croc", 4, 100));
+		help.updateEmployee(emp);
+		System.out.println(emp.getAnimalList());
 		
+		
+
+		
+		//Insert and retrieve lists
+		/*List<Zoo> zoos = testZoos(newZoo);
+		List<Employee> employees = testEmployees(anotherNewEmp);
+		//List<Animal> animals = testAnimals(newAnimal);
 		//Print Zoo list
 		System.out.println("Zoos:");
 		for (Zoo zoo: zoos)
@@ -37,7 +51,7 @@ public class Tester {
 		for (Animal animal: animals)
 		{
 			System.out.println(animal.toString());
-		}
+		}*/
 	}
 	
 	//should insert into database and then extract that object and return
