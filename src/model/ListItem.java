@@ -62,5 +62,9 @@ public class ListItem {
 	public void setAnimal(String animal) {
 		this.animal = animal;
 	}
+	@Override
+	public String toString() {
+		return "ListItem [id=" + id + ", zoo=" + zoo + ", animal=" + animal + "]";
+	}
 	
 }

@@ -16,7 +16,7 @@ public class AnimalTester {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-Zoo bill = new Zoo("Bill");
+		Zoo bill = new Zoo("Bill");
 		
 		ListDetailsHelper ldh = new ListDetailsHelper();
 		
@@ -24,16 +24,22 @@ Zoo bill = new Zoo("Bill");
 		ListItem chips = new ListItem("Target", "Chips");
 		
 		List<ListItem> billItems = new ArrayList<ListItem>();
-		billItems.add(deoderant);
-		billItems.add(chips);
+		//billItems.add(deoderant);
+		//billItems.add(chips);
 		
-		ListDetails billList = new ListDetails("Bill's ShoppingList", LocalDate.now(), bill);
+		//ListDetails billList = new ListDetails("Bill's ShoppingList", LocalDate.now(), bill);
 		
-		ldh.insertNewListDetails(billList);
+		//ldh.insertNewListDetails(billList);
 		
 		List<ListDetails>  allLists = ldh.getLists();
 		for(ListDetails a: allLists) {
+			List<ListItem> list = a.getListOfItems();
 			System.out.println(a.toString());
+			for (ListItem b: list)
+			{
+				System.out.println(b.getAnimal());
+			}
+				
 		}
 	}
 
