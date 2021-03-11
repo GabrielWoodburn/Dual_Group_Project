@@ -6,16 +6,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import model.Zoo;
+import model.Animal;
 
-public class ZooHelper {
+public class AnimalHelper {
 static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("mini_group_project");
 	
-	public void insertZoo(Zoo zoo)
+	public void insertAnimal(Animal animal)
 	{
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		em.persist(zoo);
+		em.persist(animal);
 		em.getTransaction().commit();
 		em.close();
 	}
@@ -24,34 +24,34 @@ static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("
 	{
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		Zoo target = em.find(Zoo.class, index);
-		em.remove(target);
+		Animal animal = em.find(Animal.class, index);
+		em.remove(animal);
 		em.getTransaction().commit();
 		em.close();
 	}
 	
-	public Zoo searchId(int idNumber)
+	public Animal searchId(int idNumber)
 	{
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		Zoo retrieved = em.find(Zoo.class, idNumber);
+		Animal retrieved = em.find(Animal.class, idNumber);
 		em.close();
 		return retrieved;
 	}
 	
-	public void updateZoo(Zoo zoo)
+	public void updateAnimal(Animal animal)
 	{
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		em.merge(zoo);
+		em.merge(animal);
 		em.getTransaction().commit();
 		em.close();
 	}
-	public List<Zoo> getZoos()
+	public List<Animal> getAnimals()
 	{
 		EntityManager em = emfactory.createEntityManager();
-		List<Zoo> allZoos = em.createQuery("SELECT zoo FROM Zoo zoo").getResultList();
-		return allZoos;
+		List<Animal> allAnimals = em.createQuery("SELECT animal FROM Animal animal").getResultList();
+		return allAnimals;
 	}
 	public void clean()
 	{
