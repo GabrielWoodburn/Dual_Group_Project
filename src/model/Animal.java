@@ -24,8 +24,6 @@ public class Animal {
 	private String animal_Name;
 	@Column(name="ANIMAL_AGE")
 	private int animal_Age;
-	@Column(name="ANIMAL_WEIGHT")
-	private double animal_Weight;
 
 	//Constructors
 	public Animal()
@@ -33,12 +31,11 @@ public class Animal {
 		super();
 	}
 	
-	public Animal(String animal_Name, int animal_Age, double animal_Weight)
+	public Animal(String animal_Name, int animal_Age)
 	{
 		super();
 		this.animal_Name = animal_Name;
 		this.animal_Age = animal_Age;
-		this.animal_Weight = animal_Weight;
 	}
 
 	//Methods
@@ -66,18 +63,9 @@ public class Animal {
 		this.animal_Age = animal_Age;
 	}
 
-	public double getAnimal_Weight() {
-		return animal_Weight;
-	}
-
-	public void setAnimal_Weight(double animal_Weight) {
-		this.animal_Weight = animal_Weight;
-	}
-
 	@Override
 	public String toString() {
-		return "Animal [animal_Id=" + animal_Id + ", animal_Name=" + animal_Name + ", animal_Age=" + animal_Age
-				+ ", animal_Weight=" + animal_Weight + "]";
+		return "Animal [animal_Id=" + animal_Id + ", animal_Name=" + animal_Name + ", animal_Age=" + animal_Age + "]";
 	}
 	
 }

@@ -6,52 +6,54 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import model.Zoo;
+import model.Caretaker;
 
-public class ZooHelper {
+
+
+public class CaretakerHelper {
 static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("mini_group_project");
 	
-	public void insertZoo(Zoo zoo)
+	public void insertCaretaker(Caretaker caretaker)
 	{
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		em.persist(zoo);
+		em.persist(caretaker);
 		em.getTransaction().commit();
 		em.close();
 	}
 	
-	public void deleteCPU(int index)
+	public void deleteCaretaker(int index)
 	{
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		Zoo target = em.find(Zoo.class, index);
+		Caretaker target = em.find(Caretaker.class, index);
 		em.remove(target);
 		em.getTransaction().commit();
 		em.close();
 	}
 	
-	public Zoo searchId(int idNumber)
+	public Caretaker searchId(int idNumber)
 	{
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		Zoo retrieved = em.find(Zoo.class, idNumber);
+		Caretaker retrieved = em.find(Caretaker.class, idNumber);
 		em.close();
 		return retrieved;
 	}
 	
-	public void updateZoo(Zoo zoo)
+	public void updateCaretaker(Caretaker caretaker)
 	{
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		em.merge(zoo);
+		em.merge(caretaker);
 		em.getTransaction().commit();
 		em.close();
 	}
-	public List<Zoo> getZoos()
+	public List<Caretaker> getCaretakers()
 	{
 		EntityManager em = emfactory.createEntityManager();
-		List<Zoo> allZoos = em.createQuery("SELECT zoo FROM Zoo zoo").getResultList();
-		return allZoos;
+		List<Caretaker> allCaretakers = em.createQuery("SELECT caretaker FROM Caretaker caretaker").getResultList();
+		return allCaretakers;
 	}
 	public void clean()
 	{
