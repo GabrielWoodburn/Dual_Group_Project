@@ -27,18 +27,16 @@ public class Tester {
 			{
 				System.out.println(zoo.toString());
 			}*/
+		
 		ZooHelper zooHelp = new ZooHelper();
-		AnimalHelper animalHelp = new AnimalHelper();
-		CaretakerHelper help = new CaretakerHelper();
-		//help.deleteCaretaker(1);
-		Caretaker care = new Caretaker("Jim", "Jam");
-		List<Caretaker> caretakers = new ArrayList<>();
-		caretakers.add(care);
-		Zoo zooer = zooHelp.searchId(3);
-		zooer.setCaretakerList(caretakers);
-		zooHelp.updateZoo(zooer);
 		
 		
+		CaretakerHelper care = new CaretakerHelper();
+		Caretaker careTake = care.searchId(4);
+		List<Animal> list = careTake.getAnimalList();
+		Animal an = new Animal("Tiger", 56);
+		list.add(an);
+		careTake.setAnimalList(list);
 		List<Zoo> zoos = zooHelp.getZoos();
 		for (Zoo zoo : zoos)
 		{

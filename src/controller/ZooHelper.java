@@ -20,7 +20,7 @@ static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("
 		em.close();
 	}
 	
-	public void deleteCPU(int index)
+	public void deleteZoo(int index)
 	{
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();

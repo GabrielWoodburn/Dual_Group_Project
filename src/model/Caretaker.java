@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -47,12 +48,19 @@ public class Caretaker {
 		super();
 	}
 	
-	public Caretaker(String employee_First, String employee_Last)
+	public Caretaker(String caretaker_First, String caretaker_Last)
 	{
 		super();
-		this.caretaker_First = employee_First;
-		this.caretaker_Last = employee_Last;
+		this.caretaker_First = caretaker_First;
+		this.caretaker_Last = caretaker_Last;
 		this.hireDate = LocalDate.now();
+	}
+	public Caretaker(String caretaker_First, String caretaker_Last, LocalDate date)
+	{
+		super();
+		this.caretaker_First = caretaker_First;
+		this.caretaker_Last = caretaker_Last;
+		this.hireDate = date;
 	}
 	public Caretaker(String caretaker_First, String caretaker_Last, LocalDate hireDate, List<Animal>animalList)
 	{

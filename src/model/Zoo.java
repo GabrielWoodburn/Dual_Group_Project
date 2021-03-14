@@ -53,10 +53,10 @@ public class Zoo {
 	}
 	
 	//Methods
-	public int getZoo_id() {
+	public int getZoo_Id() {
 		return zoo_id;
 	}
-	public void setZoo_id(int zoo_id) {
+	public void setZoo_Id(int zoo_id) {
 		this.zoo_id = zoo_id;
 	}
 	public String getZoo_name() {
@@ -65,7 +65,7 @@ public class Zoo {
 	public void setZoo_name(String zoo_name) {
 		this.zoo_name = zoo_name;
 	}
-	public List<Caretaker> getCartakerList() {
+	public List<Caretaker> getCaretakerList() {
 		return caretakerList;
 	}
 	public void setCaretakerList(List<Caretaker> caretakerList) {
