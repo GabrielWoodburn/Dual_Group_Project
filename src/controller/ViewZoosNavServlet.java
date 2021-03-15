@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -72,6 +73,20 @@ public class ViewZoosNavServlet extends HttpServlet {
 			{
 				marqMessage = "No Zoo was chosen";
 			}
+		}
+		else if(whatDo.equals("Add Caretaker"))
+		{
+			try
+			{
+				int zoo_id = Integer.parseInt(request.getParameter("zoo_id"));
+				request.setAttribute("zoo_id", zoo_id);
+				path = "/add-caretaker.jsp";
+			}
+			catch (NumberFormatException e)
+			{
+				marqMessage = "No Zoo was chosen.";
+			}
+			
 		}
 		request.setAttribute("marqueeMessage", marqMessage);
 		getServletContext().getRequestDispatcher(path).forward(request, response);

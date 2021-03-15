@@ -27,6 +27,7 @@
 		<input type = "submit" value = "Remove" name="whatDo">
 		<input type="submit" value = "Add Zoo" name = "whatDo">
 		<input type="submit" value = "Enter" name = "whatDo">
+		<input type="submit" value = "Add Caretaker" name = "whatDo">
 	</form>
 </body>
 </html>
