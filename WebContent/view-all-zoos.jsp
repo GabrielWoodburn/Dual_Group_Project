@@ -9,7 +9,7 @@
 <title>All Zoo's</title>
 </head>
 <body>
-	<marquee>${requestScope.marqueeMessage}</marquee>
+	<marquee scrollamount="12">${requestScope.marqueeMessage}</marquee>
 	<form method="post" action = "viewZoosNavServlet">
 		<table>
 			<tr>

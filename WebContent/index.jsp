@@ -7,6 +7,8 @@
 <title>Zoos Home</title>
 </head>
 <body style = "text-align: center">
-	<a href = "viewZoosServlet" >View All Zoos</a>
+	<h1>
+		<a href = "viewZoosServlet" >View All Zoos</a>
+	</h1>
 </body>
 </html>

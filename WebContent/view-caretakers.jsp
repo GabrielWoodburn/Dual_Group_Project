@@ -40,6 +40,7 @@
 		<input type = "submit" value = "Add New Caretaker" name="whatDo">
 		<input type = "submit" value = "Remove" name="whatDo">
 		<input type="submit" value = "Assign New Animal" name = "whatDo">
+		<input type ="submit" value= "Edit Caretaker" name = "whatDo">
 	</form>
 </body>
 </html>
